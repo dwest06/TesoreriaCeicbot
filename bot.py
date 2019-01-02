@@ -1,5 +1,6 @@
 import telepot
 import time
+import os
 import requests as req
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
@@ -148,10 +149,10 @@ class ComunicacionBot:
 	
 
 # Variables de entorno
-TOKEN = '787014842:AAEWP5sPhhBLcYdGKeHJ2a1_kp0sh6_nT3g'
+TOKEN = os.environ.get('TOKEN_BOT')
 BOT = telepot.Bot(TOKEN)
 COM = ComunicacionBot()
-HOST = 'http://localhost:8000/'
+HOST = OS.environ.get('HOST_BOT')
 
 def main():
 	MessageLoop(BOT,{'chat' : COM.chat , 
